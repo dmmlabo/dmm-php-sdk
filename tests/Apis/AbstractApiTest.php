@@ -17,7 +17,7 @@ class AbstractApiTest extends \PHPUnit_Framework_TestCase
      */
     protected $apiId;
 
-    public function testCanSetClientAndCredentialAtNew()
+    public function testCanInstantiate()
     {
         $client     = new DmmClient();
         $credential = new DmmCredential("test-999", "iiiiiiiid");
@@ -32,6 +32,26 @@ class AbstractApiTest extends \PHPUnit_Framework_TestCase
         $apiCredential = $api->getCredential();
         $this->assertEquals("test-999", $apiCredential->getAffiliateId());
         $this->assertEquals("iiiiiiiid", $apiCredential->getApiId());
+    }
+
+    /**
+     *  @expectedException \Dmm\Exceptions\DmmSDKException
+     */
+    public function testInstantiatingWithoutCredentialThrows()
+    {
+        $client = new DmmClient();
+
+        $api = new AbstractApiTestInstance($client, null);
+    }
+
+    /**
+     *  @expectedException \Dmm\Exceptions\DmmSDKException
+     */
+    public function testInstantiatingWithoutClientThrows()
+    {
+        $credential = new DmmCredential("test-999", "iiiiiiiid");
+
+        $api = new AbstractApiTestInstance(null, $credential);
     }
 
     /**
@@ -62,7 +82,7 @@ class AbstractApiTest extends \PHPUnit_Framework_TestCase
         $response = $api->sendRequest("GET", "/ItemList", ["site" => "DMM.R18"]);
 
         $this->assertInstanceOf('Dmm\DmmResponse', $response);
-        
+
         $lastResponse = $api->getLastResponse();
         $this->assertInstanceOf('Dmm\DmmResponse', $lastResponse);
         $this->assertEquals($response, $lastResponse);
