@@ -26,11 +26,6 @@
             "Dmm\\Tests\\": "tests/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "master"
-        }
-    },
     "authors": [
         {
             "name": "Yusuke Komatsu",
