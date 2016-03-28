@@ -11,4 +11,8 @@ before_script:
   - composer require satooshi/php-coveralls '~1.0'
 
 script:
-  - vendor/bin/phpunit
+  - mkdir -p build/logs
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_success:
+  - travis_retry php vendor/bin/coveralls -v
