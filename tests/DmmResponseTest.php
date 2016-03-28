@@ -8,15 +8,20 @@ use Dmm\DmmResponse;
 class DmmResponseTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @var \Dmm\DmmCredential
+     */
+    protected $credential;
+
+    /**
      * @var \Dmm\DmmRequest
      */
     protected $request;
 
     public function setUp()
     {
-        $credential = new DmmCredential('123', 'foo_id');
+        $this->credential = new DmmCredential('123', 'foo_id');
         $this->request = new DmmRequest(
-            $credential,
+            $this->credential,
             'GET',
             '/ItemList?keyword=a',
             ['foo' => 'bar']
@@ -60,5 +65,27 @@ class DmmResponseTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($response->isError(), 'Expected Response to return an error.');
         $this->assertInstanceOf('Dmm\Exceptions\DmmResponseException', $exception);
+    }
+
+    public function testCanGetRequest()
+    {
+        $graphResponseKeyValuePairs = 'id=123&name=Foo';
+        $response = new DmmResponse($this->request, $graphResponseKeyValuePairs, 200);
+
+        $request = $response->getRequest();
+
+        $this->assertEquals($this->request, $request);
+        $this->assertInstanceOf('Dmm\DmmRequest', $request);
+    }
+
+    public function testCanGetCredential()
+    {
+        $graphResponseKeyValuePairs = 'id=123&name=Foo';
+        $response = new DmmResponse($this->request, $graphResponseKeyValuePairs, 200);
+
+        $credential = $response->getCredential();
+
+        $this->assertEquals($this->credential, $credential);
+        $this->assertInstanceOf('Dmm\DmmCredential', $credential);
     }
 }
