@@ -1,5 +1,5 @@
 {
-    "name": "dmmcomlabo/dmm-php-sdk",
+    "name": "dmmcomlabo/dmm-sdk-v3",
     "description": "DMM Web API version.3 SDK for PHP",
     "keywords": ["dmm", "sdk"],
     "type": "library",
