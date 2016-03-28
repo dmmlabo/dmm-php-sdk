@@ -1,0 +1,40 @@
+{
+    "name": "dmmcomlabo/dmm-php-sdk",
+    "description": "DMM Web API version.3 SDK for PHP",
+    "keywords": ["dmm", "sdk"],
+    "type": "library",
+    "homepage": "https://github.com/DMMcomLabo/dmm-php-sdk",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.8",
+        "guzzlehttp/guzzle": "~5.0"
+    },
+    "suggest": {
+        "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dmm\\": "src/Dmm/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dmm\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.x-dev"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yusuke Komatsu",
+            "email": "komatsu-yusuke@dmm.com"
+        }
+    ]
+}
