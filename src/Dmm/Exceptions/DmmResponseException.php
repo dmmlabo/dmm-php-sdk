@@ -32,7 +32,7 @@ class DmmResponseException extends DmmSDKException
         $this->responseData = $response->getDecodedBody();
 
         $errorMessage = $this->get('message', 'Unknown error from API.');
-        $errorCode = $this->get('code', -1);
+        $errorCode = $this->get('status', -1);
 
         parent::__construct($errorMessage, $errorCode, $previousException);
     }
@@ -80,16 +80,6 @@ class DmmResponseException extends DmmSDKException
     public function getHttpStatusCode()
     {
         return $this->response->getHttpStatusCode();
-    }
-
-    /**
-     * Returns the sub-error code
-     *
-     * @return int
-     */
-    public function getSubErrorCode()
-    {
-        return $this->get('error_subcode', -1);
     }
 
     /**
