@@ -18,13 +18,16 @@ composer require dmmcomlabo/dmm-sdk-v3
 詳細は[Docs](docs)を参照してください
 
 ```php
-$dmm = new DMM([
+$dmm = new \Dmm\Dmm([
   "affiliate_id" => "YOUR-AFFILIATE-ID",
   "api_id"       => "YOUR-API-ID",
 ]);
 
 // 商品検索APIを使用する場合
-$response = $dmm->api("product")->find("DMM.R18");
+$keyword = 'ナース'
+$response = $dmm->api("product")->find(Dmm\Apis\Product::SITE_ADULT, array(
+  'keyword' => $keyword
+));
 $result = $response->decodedBody();
 print_r($result);
 ```
