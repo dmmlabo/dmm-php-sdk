@@ -1,8 +1,8 @@
 # DMM SDK for PHP (v3)
-[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://github.com/DMMcomLabo/dmm-php-sdk/blob/master/LICENSE)
-[![Build Status](http://img.shields.io/travis/DMMcomLabo/dmm-php-sdk.svg?style=flat-square)](https://travis-ci.org/DMMcomLabo/dmm-php-sdk)
-[![Coverage Status](https://img.shields.io/coveralls/DMMcomLabo/dmm-php-sdk.svg?style=flat-square)](https://coveralls.io/github/DMMcomLabo/dmm-php-sdk?branch=master)
-[![Packagist](https://img.shields.io/packagist/v/dmmcomlabo/dmm-sdk-v3.svg?style=flat-square)](https://packagist.org/packages/dmmcomlabo/dmm-sdk-v3)
+[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://github.com/dmmlabo/dmm-php-sdk/blob/master/LICENSE)
+[![Build Status](http://img.shields.io/travis/dmmlabo/dmm-php-sdk.svg?style=flat-square)](https://travis-ci.org/dmmlabo/dmm-php-sdk)
+[![Coverage Status](https://img.shields.io/coveralls/dmmlabo/dmm-php-sdk.svg?style=flat-square)](https://coveralls.io/github/dmmlabo/dmm-php-sdk?branch=master)
+[![Packagist](https://img.shields.io/packagist/v/dmmlabo/dmm-sdk-v3.svg?style=flat-square)](https://packagist.org/packages/dmmlabo/dmm-sdk-v3)
 
 DMM Web API version.3 クライアント for PHP
 
@@ -11,7 +11,7 @@ DMM Web API version.3 クライアント for PHP
 ## インストール
 
 ```sh
-composer require dmmcomlabo/dmm-sdk-v3
+composer require dmmlabo/dmm-sdk-v3
 ```
 
 ## 使い方
