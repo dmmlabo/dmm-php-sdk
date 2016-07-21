@@ -11,7 +11,7 @@ DMM Web API version.3 クライアント for PHP
 ## インストール
 
 ```sh
-composer require dmmlabo/dmm-sdk-v3
+composer require dmmcomlabo/dmm-sdk-v3
 ```
 
 ## 使い方
