@@ -24,7 +24,7 @@ $dmm = new \Dmm\Dmm([
 ]);
 
 // 商品検索APIを使用する場合
-$keyword = 'ナース'
+$keyword = 'ナース';
 $response = $dmm->api("product")->find(Dmm\Apis\Product::SITE_ADULT, [
   'keyword' => $keyword
 ]);
