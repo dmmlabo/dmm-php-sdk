@@ -28,7 +28,7 @@ $keyword = 'ナース';
 $response = $dmm->api("product")->find(Dmm\Apis\Product::SITE_ADULT, [
   'keyword' => $keyword
 ]);
-$result = $response->decodedBody();
+$result = $response->getDecodedBody();
 print_r($result);
 ```
 
