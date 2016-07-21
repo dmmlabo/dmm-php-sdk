@@ -25,9 +25,9 @@ $dmm = new \Dmm\Dmm([
 
 // 商品検索APIを使用する場合
 $keyword = 'ナース'
-$response = $dmm->api("product")->find(Dmm\Apis\Product::SITE_ADULT, array(
+$response = $dmm->api("product")->find(Dmm\Apis\Product::SITE_ADULT, [
   'keyword' => $keyword
-));
+]);
 $result = $response->decodedBody();
 print_r($result);
 ```
