@@ -11,7 +11,7 @@ DMM Web API version.3 クライアント for PHP
 ## インストール
 
 ```sh
-composer require dmmlabo/dmm-sdk-v3
+composer require dmmcomlabo/dmm-sdk-v3
 ```
 
 ## 使い方
@@ -24,11 +24,11 @@ $dmm = new \Dmm\Dmm([
 ]);
 
 // 商品検索APIを使用する場合
-$keyword = 'ナース'
-$response = $dmm->api("product")->find(Dmm\Apis\Product::SITE_ADULT, array(
+$keyword = 'ナース';
+$response = $dmm->api("product")->find(Dmm\Apis\Product::SITE_ADULT, [
   'keyword' => $keyword
-));
-$result = $response->decodedBody();
+]);
+$result = $response->getDecodedBody();
 print_r($result);
 ```
 
