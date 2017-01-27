@@ -24,6 +24,8 @@ class Author extends AbstractApi
             throw new DmmSDKException('a correct floor id must be set when call Author API.');
         }
 
+        $params['floor_id'] = $floor_id;
+
         return $this->get("/AuthorSearch", $params);
     }
 }
