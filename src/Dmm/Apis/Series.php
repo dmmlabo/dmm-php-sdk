@@ -24,6 +24,8 @@ class Series extends AbstractApi
             throw new DmmSDKException('a correct floor id must be set when call Series API.');
         }
 
+        $params['floor_id'] = $floor_id;
+
         return $this->get("/SeriesSearch", $params);
     }
 }

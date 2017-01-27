@@ -24,6 +24,8 @@ class Genre extends AbstractApi
             throw new DmmSDKException('a correct floor id must be set when call Genre API.');
         }
 
+        $params['floor_id'] = $floor_id;
+
         return $this->get("/GenreSearch", $params);
     }
 }
