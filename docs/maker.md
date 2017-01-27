@@ -8,19 +8,19 @@
 
 #### フロアIDでメーカー情報を取得
 ```php
-$actress = $dmm->api('author')->find(24);
+$actress = $dmm->api('maker')->find(24);
 ```
 
 #### メーカーの頭文字を指定して取得
 ```php
-$actress = $dmm->api('author')->find(10, [
+$actress = $dmm->api('maker')->find(10, [
   "initial" => "あ"
 ]);
 ```
 
 #### 検索範囲を指定して取得
 ```php
-$actress = $dmm->api('author')->find(22, [
+$actress = $dmm->api('maker')->find(22, [
   "hits" => 10,
   "offset" => 2
 ]);
