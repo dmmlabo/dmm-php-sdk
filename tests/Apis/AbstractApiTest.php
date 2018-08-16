@@ -80,7 +80,7 @@ class AbstractApiTest extends \PHPUnit_Framework_TestCase
         $client     = new DmmClient();
         $credential = new DmmCredential($this->affiliateId, $this->apiId);
         $api = new AbstractApiTestInstance($client, $credential);
-        $response = $api->sendRequest("GET", "/ItemList", ["site" => "DMM.R18"]);
+        $response = $api->sendRequest("GET", "/ItemList", ["site" => "FANZA"]);
 
         $this->assertInstanceOf('Dmm\DmmResponse', $response);
 
