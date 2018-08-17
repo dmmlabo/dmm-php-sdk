@@ -104,7 +104,7 @@ class DmmClientTest extends \PHPUnit_Framework_TestCase
             static::$testDmmCredential,
             'GET',
             '/ItemList',
-            ["site" => "DMM.R18"]
+            ["site" => "FANZA"]
         );
         $result = static::$testDmmClient->sendRequest($request)->getDecodedBody();
 

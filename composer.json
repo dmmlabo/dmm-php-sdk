@@ -3,7 +3,7 @@
     "description": "DMM Web API version.3 SDK for PHP",
     "keywords": ["dmm", "sdk"],
     "type": "library",
-    "homepage": "https://github.com/DMMcomLabo/dmm-php-sdk",
+    "homepage": "https://github.com/dmmlabo/dmm-php-sdk",
     "require": {
         "php": ">=5.4.0"
     },

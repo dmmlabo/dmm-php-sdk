@@ -9,7 +9,7 @@ use Dmm\Exceptions\DmmSDKException;
 class Product extends AbstractApi
 {
     const SITE_GENERAL = "DMM.com";
-    const SITE_ADULT   = "DMM.R18";
+    const SITE_ADULT   = "FANZA";
 
     /**
      * Sends a request to Product API (DMM.com) and  returns the result.
@@ -46,7 +46,7 @@ class Product extends AbstractApi
     }
 
     /**
-     * Sends a request to Product API (DMM.R18) and  returns the result.
+     * Sends a request to Product API (FANZA) and  returns the result.
      *
      * @param array $params
      *

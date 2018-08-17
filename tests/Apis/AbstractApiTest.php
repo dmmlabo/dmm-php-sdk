@@ -4,6 +4,7 @@ namespace Dmm\Tests\Apis;
 use Dmm\DmmCredential;
 use Dmm\DmmClient;
 use Dmm\Apis\AbstractApi;
+use Dmm\Exceptions\DmmSDKException;
 
 class AbstractApiTest extends \PHPUnit_Framework_TestCase
 {
@@ -79,7 +80,7 @@ class AbstractApiTest extends \PHPUnit_Framework_TestCase
         $client     = new DmmClient();
         $credential = new DmmCredential($this->affiliateId, $this->apiId);
         $api = new AbstractApiTestInstance($client, $credential);
-        $response = $api->sendRequest("GET", "/ItemList", ["site" => "DMM.R18"]);
+        $response = $api->sendRequest("GET", "/ItemList", ["site" => "FANZA"]);
 
         $this->assertInstanceOf('Dmm\DmmResponse', $response);
 
@@ -95,21 +96,21 @@ class AbstractApiTest extends \PHPUnit_Framework_TestCase
         $apiId       = getenv("DMM_TEST_API_ID");
 
         if (empty($affiliateId) || empty($apiId)) {
-            if (!file_exists(__DIR__ . '/DmmTestCredentials.php')) {
+            if (!file_exists(__DIR__ . '/../DmmTestCredentials.php')) {
                 throw new DmmSDKException(
                     'You must create a DmmTestCredentials.php file from DmmTestCredentials.php.dist'
                 );
             }
 
-            if (!strlen(DmmTestCredentials::$affiliateId) ||
-                !strlen(DmmTestCredentials::$apiId)
+            if (!strlen(\Dmm\Tests\DmmTestCredentials::$affiliateId) ||
+                !strlen(\Dmm\Tests\DmmTestCredentials::$apiId)
             ) {
                 throw new DmmSDKException(
                     'You must fill out DmmTestCredentials.php'
                 );
             }
-            $affiliateId = DmmTestCredentials::$affiliateId;
-            $apiId       = DmmTestCredentials::$apiId;
+            $affiliateId = \Dmm\Tests\DmmTestCredentials::$affiliateId;
+            $apiId       = \Dmm\Tests\DmmTestCredentials::$apiId;
         }
 
         $this->affiliateId = $affiliateId;
